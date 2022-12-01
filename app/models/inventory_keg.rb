@@ -1,0 +1,2 @@
+class InventoryKeg < ApplicationRecord
+end
