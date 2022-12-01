@@ -3,46 +3,33 @@ class Seed
   def self.begin
     seed = Seed.new
     seed.generate_inventory_kegs
-    # seed.generate_states
   end
-
-  t.string "style"
-  t.string "brand"
-  t.string "brewery"
-  t.date "date_received"
-  t.boolean "priority", default: false
-  t.decimal "abv", precision: 8, scale: 2
-  t.decimal "price", precision: 8, scale: 2
-  t.integer "serving_size"
-  t.date "date_tapped"
-  t.boolean "partial", default: false
-  t.integer "serving_price"
-  t.integer "keg_size"
 
   def generate_inventory_kegs
-  
-    .times do |i|
-      inventory = Inventory_keg.create!(
-        style:
-        brand: Faker::Beer.name 
+  sizes = ["1/2", "1/6", "50L"]
+  serving_sizes = ["16oz", "12oz", "8oz"]
+  prices = ["120.00", "150.00"]
+    40.times do |i|
+
+      inventory = InventoryKeg.create!(
+        style: Faker::Beer.style,
+        brand: Faker::Beer.name,
         brewery: Faker::Beer.brand,
-        date_received:
-        priority:
+        date_received: Faker::Date.in_date_period(month: 9),
+        priority: false,
         abv: Faker::Beer.alcohol,
-        price:
-        serving_size:
-        date_tapped:
-        partial:
-        serving_price:
-        keg_size:
+        price: prices.sample(),
+        serving_size: serving_sizes.sample(),
+        date_tapped: nil,
+        partial: false,
+        serving_price: "6.00",
+        keg_size: sizes.sample()
 
       )
-    puts"inventory filled"
+
+      puts"inventory filled"
+    end
   end
+
 end
- 
-
-
-
-
 Seed.begin
