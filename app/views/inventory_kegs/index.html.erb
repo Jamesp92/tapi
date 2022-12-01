@@ -1,0 +1,14 @@
+<%# show all taps 
+user = view
+admin view and update %>
+
+
+<% if @kegs.any? %>
+  <ul>
+    <% @kegs.each do |keg| %>
+      <li><%= link_to keg.name, tap_path(keg) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no kegs yet.</p>
+<% end %>
