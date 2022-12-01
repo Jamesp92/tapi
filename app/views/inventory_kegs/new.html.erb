@@ -1,0 +1,21 @@
+<h1>New keg</h1>
+
+<%= form_for @keg do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cost %>
+  <%= f.number_field :cost %>
+  <%= f.label :country_of_origin %>
+  <%= f.text_field :country_of_origin %>
+  <%= f.submit  %>
+<% end %>
+
+
+<% if @keg.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @keg.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
