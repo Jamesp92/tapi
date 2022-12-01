@@ -1,2 +1,2 @@
-class Inventory_Keg < ActiveREcord::Base
+class InventoryKeg < ApplicationRecord
 end
