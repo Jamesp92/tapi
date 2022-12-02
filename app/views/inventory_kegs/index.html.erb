@@ -1,7 +1,8 @@
 <h1>Inventory Kegs</h1>
 
+
 <% if @inv_kegs.any? %>
-  <ul>
+  <ul class="kegs">
     <% @inv_kegs.each do |keg| %>
       <li><%= link_to keg.brand, inventory_keg_path(keg) %></li>
     <% end %>
