@@ -2,7 +2,15 @@ class Seed
 
   def self.begin
     seed = Seed.new
+    InventoryKeg.destroy_all
+    User.destroy_all
     seed.generate_inventory_kegs
+    seed.generate_users
+  end
+
+  def generate_users
+    User.create!(user_name: "user", password: "user")
+    puts"Users created!"
   end
 
   def generate_inventory_kegs
@@ -24,11 +32,11 @@ class Seed
         partial: false,
         serving_price: "6.00",
         keg_size: sizes.sample()
-
       )
 
-      puts"inventory filled"
     end
+    puts"Kegs Created!"
+
   end
 
 end
