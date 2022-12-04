@@ -1,5 +1,6 @@
 class InventoryKegsController < ApplicationController
-
+  before_action :authorized
+  
 def index
   @inv_kegs = InventoryKeg.all
   render :index
