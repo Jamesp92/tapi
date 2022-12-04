@@ -1,0 +1,17 @@
+<h1>Taps: </h1>
+
+
+<%= button_to "Create new tap", 
+              new_tap_path,
+              method: :get %>
+
+
+<% if @taps.any? %>
+  <ul>
+    <% @taps.each do |tap| %>
+      <li><%= link_to tap.name, tap_path(tap) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no taps yet.</p>
+<% end %>
