@@ -57,6 +57,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'dotenv-rails'
 end
 
 group :development do
