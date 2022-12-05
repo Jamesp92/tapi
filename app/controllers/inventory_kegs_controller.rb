@@ -6,6 +6,11 @@ def index
   render :index
 end
 
+def new
+  @inv_keg = InventoryKeg.new
+  render :new
+end
+
 def create
   @inv_keg = InventoryKeg.new(keg_params)
   if @product.save
