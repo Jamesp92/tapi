@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   root to: 'inventory_kegs#index'
-  resources :inventory_kegs do
-    # resources :reviews, except: [:index]
-  end
+  resources :inventory_kegs
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  resources :users, only: [:create, :show]
 
-  get '/signin' => 'sessions#new'
-  post '/signin' => 'sessions#create'
-  get '/signout' => 'sessions#destroy'
+  get "/signup", to: "users#new"
+  get "/login", to: "sessions#new"
+  post "/sessions", to: "sessions#create"
+  delete "/sessions", to: "sessions#destroy"
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

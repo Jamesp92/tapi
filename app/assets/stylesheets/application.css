@@ -1,25 +1,11 @@
 @import "bootstrap-sprockets";
-@import 'bootstrap';
+@import "bootstrap";
 
-
-
-.style-body {
-  font: 100% Helvetica, sans-serif;
-  color: rgb(238, 19, 19);
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav li {
-  display: inline-block;
-}
-
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
+body {
+  background-color: rgb(173, 171, 167);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: scroll;
+  padding-top: 5%;
 }
