@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root to: 'inventory_kegs#index'
-  resources :inventory_kegs do
-    # resources :reviews, except: [:index]
-  end
+  resources :inventory_kegs
 
   resources :users, only: [:create, :show]
 
