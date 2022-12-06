@@ -13,6 +13,7 @@ end
 
 def show 
   @inv_keg = InventoryKeg.find(params[:id])
+  render :show
 end
 
 def create
