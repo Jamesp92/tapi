@@ -23,5 +23,12 @@ class TapsController < ApplicationController
   end
 
   def kick
+    if Tap.kick(params)
+      flash[:notice] = "Keg has been added to the Archive."
+      redirect_to taps_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :show, status: :unprocessable_entity
+    end
   end
 end
