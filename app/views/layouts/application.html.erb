@@ -12,6 +12,15 @@
 
   <body>
 
+  <nav class="navbar navbar-light bg-light">
+  <a class="btn btn-outline-success" href="/" role="button">
+  Tap list
+  </a>
+  <a class="navbar-brand" href="/taps">Taps</a>
+  <a class="navbar-brand" href="/archives">Archive list</a>
+  <a class="navbar-brand" href="/login">login page</a>
+</nav>
+
     <% if logged_in? %>
       <%= button_to "Logout", sessions_path, method: :delete %>
     <% else %>
