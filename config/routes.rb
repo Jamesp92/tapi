@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'inventory_kegs#index'
+  
   resources :inventory_kegs
-
+  resources :archives, only: [:index]
+  resources :taps
   resources :users, only: [:create, :show]
 
   get "/signup", to: "users#new"
