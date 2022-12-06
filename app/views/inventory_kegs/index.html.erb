@@ -3,10 +3,11 @@
 <h1 class='.style-body'>Inventory Kegs</h1>
 
 
+
 <% if @inv_kegs.any? %>
   <ul class="kegs">
     <% @inv_kegs.each do |keg| %>
-      <li><%= link_to keg.brand, inventory_keg_path(keg) %></li>
+      <li> <img id="beer1" src="<%= asset_path('beer2.jpg') %>">   <%= link_to keg.brand, inventory_keg_path(keg) %></li>
     <% end %>
   </ul>
 <% else %>
@@ -18,6 +19,6 @@
               new_inventory_keg_path,
               method: :get %>
 
-<%# <%end%> %>
+
 
 <%end%>
