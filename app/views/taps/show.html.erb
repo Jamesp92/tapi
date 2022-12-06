@@ -1,6 +1,8 @@
-<h1>Tap name: <%= @tap.name %></h1>
-<h3>Size: <%= @tap.size %></h3>
-<h3>Made in <%= @tap.made_in %></h3>
+<h1>Tap: <%= @tap.id %></h1>
+<h3>Style: <%= @tap.tap_style %></h3>
+<h3>Keg On: <%= InventoryKeg.find(@tap.keg_on_id).brand %></h3>
+<h3>Keg On Deck: <%= InventoryKeg.find(@tap.keg_on_deck_id).brand %></h3>
+
 
 <%= button_to "Edit Tap", 
               edit_tap_path(@tap),
