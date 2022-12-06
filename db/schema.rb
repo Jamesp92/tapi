@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_043113) do
   create_table "taps", force: :cascade do |t|
     t.bigint "keg_on_id"
     t.bigint "keg_on_deck_id"
-    t.string "tap_stlye"
+    t.string "tap_style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["keg_on_deck_id"], name: "index_taps_on_keg_on_deck_id"
