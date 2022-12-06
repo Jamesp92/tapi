@@ -5,7 +5,7 @@ admin view and update %>
 <% if @archives.any? %>
   <ul>
     <% @archives.each do |archive| %>
-      <li><%= link_to archive.name, archive_path(archive) %></li>
+      <li><%= link_to archive.brand, archives_path(archive) %></li>
     <% end %>
   </ul>
 <% else %>
