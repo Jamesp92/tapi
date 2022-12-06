@@ -2,11 +2,11 @@
 @import "bootstrap";
 
 body {
-  background-image: url(/assets/Tapi.jpg);
+  /* background-image: url(/assets/Tapi.jpg);
   background-color: rgb(173, 171, 167);
   background-size: cover;
   height: 100%;
   
   overflow: scroll;
-  padding-top: 5%;
+  padding-top: 5%; */
 }
