@@ -9,6 +9,7 @@ class TapsController < ApplicationController
     @tap = Tap.find(params[:id])
     render :show
   end
+
   def new
   end
 
@@ -19,5 +20,8 @@ class TapsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def kick
   end
 end
