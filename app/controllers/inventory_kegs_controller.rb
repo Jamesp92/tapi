@@ -11,6 +11,10 @@ def new
   render :new
 end
 
+def show 
+  @inv_keg = InventoryKeg.find(params[:id])
+end
+
 def create
   @inv_keg = InventoryKeg.new(keg_params)
   if @inv_keg.save
@@ -21,6 +25,8 @@ def create
     render :new, status: :unprocessable_entity
   end
 end
+
+
 
 private
   def keg_params

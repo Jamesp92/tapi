@@ -2,10 +2,52 @@
 @import "bootstrap";
 
 body {
-  background-color: rgb(173, 171, 167);
+  background-color: rgb(184, 184, 183);
   background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
   overflow: scroll;
   padding-top: 5%;
+
+}
+
+ul li {
+  font-family: "Gabriola";
+  list-style: none;
+  font-size: 35px;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Gabriola";
+  font-size: 60px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+h2 {
+  font-family: "Gabriola";
+  font-size: 50px;
+  text-align: center;
+  color: rgb(53, 0, 59);
+}
+
+h3 {
+  font-family: "Gabriola";
+  font-size: 40px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+a {
+  color: rgb(0, 0, 0);
+}
+
+#beer1 {
+  background-color: rgb(173, 171, 167);
+  width: 25px;
+  height: 25px;
+  transform: rotate(-20deg);
+
+  mix-blend-mode: multiply;
 }
