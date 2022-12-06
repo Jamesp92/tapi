@@ -8,4 +8,19 @@ body {
   background-repeat: no-repeat;
   overflow: scroll;
   padding-top: 5%;
+
 }
+
+ul li {
+  font-family: "Gabriola";
+  list-style: none;
+  font-size: 30px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  color: rgb(255, 167, 3);
+}
+
