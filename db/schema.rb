@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_023812) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_110040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_023812) do
     t.string "tap_style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tap_number"
     t.index ["keg_on_deck_id"], name: "index_taps_on_keg_on_deck_id"
     t.index ["keg_on_id"], name: "index_taps_on_keg_on_id"
   end
