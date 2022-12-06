@@ -16,3 +16,4 @@ document.addEventListener('turbo:load', () => {
 
 console.log('hello');
 
+import * as bootstrap from "bootstrap"
