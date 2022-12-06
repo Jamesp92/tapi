@@ -6,11 +6,16 @@ def index
   render :index
 end
 
+def new
+  @inv_keg = InventoryKeg.new
+  render :new
+end
+
 def create
   @inv_keg = InventoryKeg.new(keg_params)
   if @inv_keg.save
-    flash[:notice] = "Wine has been added to the List."
-    redirect_to kegs_path
+    flash[:notice] = "Kegs has been added to the List."
+    redirect_to inventory_kegs_path
   else
     flash[:alert] = "Something went wrong :/"
     render :new, status: :unprocessable_entity

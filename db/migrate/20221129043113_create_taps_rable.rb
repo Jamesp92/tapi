@@ -3,7 +3,7 @@ class CreateTapsRable < ActiveRecord::Migration[7.0]
     create_table :taps do |t|
       t.references :keg_on, foreign_key: { to_table: 'inventory_kegs' }
       t.references :keg_on_deck, foreign_key: { to_table: 'inventory_kegs' }
-      t.string :tap_stlye
+      t.string :tap_style
 
       t.timestamps
     end
