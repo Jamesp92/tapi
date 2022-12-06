@@ -1,6 +1,8 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import initKegsSortable from './plugins/initSortable'
 import "@hotwired/turbo-rails"
+import "bootstrap"
+
 
 document.addEventListener('turbo:load', () => {
   console.log("start");
