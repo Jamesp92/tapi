@@ -21,11 +21,23 @@ ul li {
 h1 {
   font-size: 60px;
   text-align: center;
-  color: rgb(255, 167, 3);
+  color: rgb(0, 0, 0);
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  color: rgb(53, 0, 59);
+}
+
+h3 {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
 
 a {
-  color: rgb(255, 167, 3);
+  color: rgb(0, 0, 0);
 }
 
 #beer1 {
