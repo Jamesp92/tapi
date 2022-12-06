@@ -2,10 +2,10 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_inventory_kegs
     seed.generate_users
-    seed.generate_archives
+    seed.generate_inventory_kegs
     seed.generate_taps
+    seed.generate_archives
   end
 
   def generate_users
@@ -99,12 +99,14 @@ class Seed
   end
 
   def generate_taps
+    index = 0
     6.times do |i|
       styles = ["Lager", "IPA", "Hazy IPA", "Stout", "Beligan", "Sour"]
       tap = Tap.create!(
         tap_style: styles.sample(),
+        tap_number: index += 1,
         keg_on_id: InventoryKeg.take.id,
-        keg_on_deck_id: InventoryKeg.take.id,
+        keg_on_deck_id: InventoryKeg.take.id
       )
     end
     puts"Taps created!"
