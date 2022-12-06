@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
   delete "/sessions", to: "sessions#destroy"
   
+  post "/kick", to: "taps#kick"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
