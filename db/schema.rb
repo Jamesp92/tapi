@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_110040) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
-    t.bigint "taps_id"
+    t.integer "taps_id"
     t.index ["taps_id"], name: "index_inventory_kegs_on_taps_id"
   end
 
