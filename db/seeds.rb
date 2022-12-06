@@ -2,10 +2,6 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    InventoryKeg.destroy_all
-    User.destroy_all
-    Archive.destroy_all
-    Tap.destroy_all
     seed.generate_inventory_kegs
     seed.generate_users
     seed.generate_archives
@@ -14,6 +10,7 @@ class Seed
 
   def generate_users
     User.create!(user_name: "user", password: "user")
+    User.create!(user_name: "admin", password: "admin", admin: true)
     puts"Users created!"
   end
 
@@ -114,5 +111,11 @@ class Seed
   end
 
 end
+
+User.destroy_all
+Tap.destroy_all
+InventoryKeg.destroy_all
+Archive.destroy_all
+
 
 Seed.begin
