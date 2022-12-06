@@ -22,6 +22,8 @@ def create
   end
 end
 
+
+
 private
   def keg_params
     params.require(:inventory_keg).permit(:style, :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size)
