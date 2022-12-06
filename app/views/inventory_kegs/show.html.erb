@@ -1,0 +1,13 @@
+<h1>Tap name: <%= @keg.name %></h1>
+<h3>Size: <%= @keg.size %></h3>
+<h3>Made in <%= @keg.made_in %></h3>
+
+<%= button_to "Edit Keg", 
+              edit_keg_path(@keg),
+              method: :get %>
+<%= button_to "Delete Keg", 
+              keg_path(@keg),
+              method: :delete %> 
+<%= button_to "Return to Kegs Page", 
+              kegs_path,
+              method: :get %>
