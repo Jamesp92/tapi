@@ -1,15 +1,52 @@
-<h1>Tap: <%= @tap.id %></h1>
+<h1>Tap: <%= @tap.tap_number %></h1>
 <h3>Style: <%= @tap.tap_style %></h3>
-<h3>Keg On: <%= InventoryKeg.find(@tap.keg_on_id).brand %></h3>
-<h3>Keg On Deck: <%= InventoryKeg.find(@tap.keg_on_deck_id).brand %></h3>
 
+<% if !@tap.keg_on_id.nil? %>
+<% keg_on = InventoryKeg.find(@tap.keg_on_id) %>
+  <h3>Keg On: <%= link_to keg_on.brand , inventory_keg_path(keg_on) %></h3>
+<% else %>
+  <h3>Keg On: None</h3>
+<% end %>
 
-<%= button_to "Edit Tap", 
-              edit_tap_path(@tap),
-              method: :get %>
-<%= button_to "Delete Tap", 
-              tap_path(@tap),
-              method: :delete %> 
+<%= button_to "Kick Keg", 
+              kick_path,
+              params: {keg_on_id: @tap.keg_on_id, tap_id: @tap.id},
+              method: :post %>
+
+<br>
+<% if !@tap.keg_on_deck_id.nil? %>
+  <h3>Keg On Deck: <%= InventoryKeg.find(@tap.keg_on_deck_id).brand %></h3>
+<% else %>
+  <h3>Keg On Deck: None</h3>
+<% end %>
+
+<br>
+
+<h3>Kegs In Line:<h3>
+<% if @tap_kegs.any? %>
+  <ul>
+    <% @tap_kegs.each do |keg| %>
+      <li><%= link_to keg.brand, inventory_keg_path(keg) %> <%= keg.brewery%> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no kegs in line yet.</p>
+<% end %>
+
+<br>
+
+<h3>Suggested Kegs:<h3>
+<% if @tap_suggest.any? %>
+  <ul>
+    <% @tap_suggest.each do |keg| %>
+      <li><%= link_to keg.brand, inventory_keg_path(keg) %> <%= keg.brewery%> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no kegs matching this tap style.</p>
+<% end %>
+
+<br>
 <%= button_to "Return to Taps Page", 
               taps_path,
               method: :get %>

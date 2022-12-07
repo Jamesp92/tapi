@@ -7,23 +7,21 @@
   <%= f.text_field :brewery %>
   <%= f.label :date_received %>
   <%= f.date_field :date_received %>
-   <%= f.label :priority %>
+  <%= f.label :priority %>
   true
   <%= f.radio_button :priority, "true" %>
   false
   <%= f.radio_button :priority, "false" %>
-   <%= f.label :abv %>
+  <%= f.label :abv %>
   <%= f.number_field :abv , in: 0..20.0, step: 0.1 %>
-   <%= f.label :price %>
-  <%= f.number_field :price , in: 50.0..400 , step: 50%>
-   <%= f.label :serving_size %>
+  <%= f.label :price %>
+  <%= f.number_field :price , in: 50.00..900.00 , step: 0.01 %>
+  <%= f.label :serving_size %>
   <%= f.number_field :serving_size %>
-   <%= f.label :date_tapped %>
-  <%= f.date_field :date_tapped %>
-   <%= f.label :serving_price %>
+  <%= f.label :serving_price %>
   <%= f.number_field :serving_price, in: 1.0..20.0, step: 0.5 %>
-   <%= f.label :keg_size %>
-  <%= f.number_field :keg_size %>
+  <%= f.label :keg_size %>
+  <%= f.text_field :keg_size %>
   <%= f.submit  %>
 <% end %>
 

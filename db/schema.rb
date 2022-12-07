@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_043113) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_110040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_043113) do
     t.integer "keg_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
+    t.integer "taps_id"
+    t.index ["taps_id"], name: "index_inventory_kegs_on_taps_id"
   end
 
   create_table "taps", force: :cascade do |t|
@@ -56,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_043113) do
     t.string "tap_style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tap_number"
     t.index ["keg_on_deck_id"], name: "index_taps_on_keg_on_deck_id"
     t.index ["keg_on_id"], name: "index_taps_on_keg_on_id"
   end
@@ -68,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_043113) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "inventory_kegs", "taps", column: "taps_id"
   add_foreign_key "taps", "inventory_kegs", column: "keg_on_deck_id"
   add_foreign_key "taps", "inventory_kegs", column: "keg_on_id"
 end
