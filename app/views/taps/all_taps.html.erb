@@ -3,7 +3,7 @@
 <% if @taps.any? %>
   <ul>
     <% @taps.each do |tap| %>
-      <li><%= link_to tap.id, tap_path(tap) %> <%= tap.tap_style%> </li>
+      <li>Tap: <%= link_to tap.tap_number, tap_path(tap) %> <%= tap.tap_style%> </li>
     <% end %>
   </ul>
 <% else %>
