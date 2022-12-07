@@ -17,7 +17,7 @@ def show
 end
 
 def create
-  @inv_keg = InventoryKeg.create!(inv_keg_params)
+  @inv_keg = InventoryKeg.create!(keg_params)
   if @inv_keg.save
     flash[:notice] = "Wine has been added to the List."
     render :index
@@ -45,7 +45,6 @@ def update
 end
 
 private
-  def inv_keg_params
   def keg_params
     params.require(:inventory_keg).permit(:style, :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size)
   end
