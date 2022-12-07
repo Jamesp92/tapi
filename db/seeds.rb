@@ -18,9 +18,10 @@ class Seed
     sizes = ["1/2", "1/6", "50L"]
     serving_sizes = ["16oz", "12oz", "8oz"]
     prices = ["120.00", "150.00"]
+    styles = ["Lager", "IPA", "Hazy IPA", "Stout", "Beligan", "Sour"]
     20.times do |i|
       inventory = InventoryKeg.create!(
-        style: Faker::Beer.style,
+        style: styles.sample(),
         brand: Faker::Beer.name,
         brewery: Faker::Beer.brand,
         date_received: Faker::Date.in_date_period(month: 9),
@@ -38,7 +39,7 @@ class Seed
 
     5.times do |i|
       inventory = InventoryKeg.create!(
-        style: Faker::Beer.style,
+        style: styles.sample(),
         brand: Faker::Beer.name,
         brewery: Faker::Beer.brand,
         date_received: Faker::Date.in_date_period(month: 9),
@@ -56,7 +57,7 @@ class Seed
 
     5.times do |i|
       inventory = InventoryKeg.create!(
-        style: Faker::Beer.style,
+        style: styles.sample(),
         brand: Faker::Beer.name,
         brewery: Faker::Beer.brand,
         date_received: Faker::Date.in_date_period(month: 9),
@@ -104,9 +105,7 @@ class Seed
       styles = ["Lager", "IPA", "Hazy IPA", "Stout", "Beligan", "Sour"]
       tap = Tap.create!(
         tap_style: styles.sample(),
-        tap_number: index += 1,
-        keg_on_id: InventoryKeg.take.id,
-        keg_on_deck_id: InventoryKeg.take.id
+        tap_number: index += 1
       )
     end
     puts"Taps created!"
@@ -115,8 +114,8 @@ class Seed
 end
 
 User.destroy_all
-Tap.destroy_all
 InventoryKeg.destroy_all
+Tap.destroy_all
 Archive.destroy_all
 
 
