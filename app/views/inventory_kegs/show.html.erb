@@ -12,3 +12,34 @@
 <h3>Date tapped: <%= @inv_keg.date_tapped %></h3>
 
 <h3>Priority: <%= @inv_keg.priority %></h3>
+
+<% if !@inv_keg.taps_id.nil? %>
+<% tap = Tap.find(@inv_keg.taps_id)%>
+  <h3>Tap: <%= tap.tap_number %></h3>
+<% else %>
+  <h3>Tap: Not Assigned to a Tap</h3>
+<% end %>
+
+<%= button_to "Edit Keg Info", 
+              edit_inventory_keg_path,
+              method: :get %>
+<br>
+<form action="/inventory_kegs/<%= @inv_keg.id %>" method="patch">
+  <%# <input name="_method" type="hidden" value="patch"> %>
+  
+  <div class="form-group">
+    <label for="tap_assign">Assign to a Tap:</label>
+      <select name="tap" id="tap_assign">
+        <option value="">--Select a Tap--</option>
+        <% Tap.all.each do |tap| %>
+          <option value="<%= tap.id %>"><%= tap.tap_number %> <%= tap.tap_style %></option>
+        <% end %>
+      </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<%# <%= form_for @inv_keg do |f| %>
+  <%#= f.label :taps_id%>
+  <%#= f.submit %>
+<%# end %> 
