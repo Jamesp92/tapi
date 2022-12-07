@@ -1,15 +1,17 @@
 <h1>Tap: <%= @tap.tap_number %></h1>
 <h3>Style: <%= @tap.tap_style %></h3>
 <h3>Keg On: <%= InventoryKeg.find(@tap.keg_on_id).brand %></h3>
+
+<%= button_to "Kick Keg", 
+              kick_path,
+              params: {keg_on_id: @tap.keg_on_id},
+              method: :post %>
+
 <h3>Keg On Deck: <%= InventoryKeg.find(@tap.keg_on_deck_id).brand %></h3>
 
 
-<%= button_to "Edit Tap", 
-              edit_tap_path(@tap),
-              method: :get %>
-<%= button_to "Delete Tap", 
-              tap_path(@tap),
-              method: :delete %> 
+
+<br>
 <%= button_to "Return to Taps Page", 
               taps_path,
               method: :get %>
