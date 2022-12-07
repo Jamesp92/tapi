@@ -27,10 +27,25 @@ def create
   end
 end
 
+def edit
+  @inv_keg = InventoryKeg.find(params[:id])
+  render :edit
+end
 
+def update
+  @inv_keg = InventoryKeg.find(params[:id])
+  if @inv_keg.update(keg_params)
+    flash[:notice] = "Keg has been updated."
+    redirect_to inventory_keg_path(@inv_keg.id)
+  else
+    flash[:alert] = "Something went wrong :/"
+    @inv_keg = InventoryKeg.find(params[:id])
+    render :edit, status: :unprocessable_entity
+  end
+end
 
 private
-  def product_params
+  def keg_params
     params.require(:inventory_keg).permit(:style, :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size)
   end
 
