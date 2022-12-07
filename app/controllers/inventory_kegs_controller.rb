@@ -17,10 +17,10 @@ def show
 end
 
 def create
-  @inv_keg = InventoryKeg.new(keg_params)
-  if @product.save
+  @inv_keg = InventoryKeg.create!(inv_keg_params)
+  if @inv_keg.save
     flash[:notice] = "Wine has been added to the List."
-    redirect_to products_path
+    render :index
   else
     flash[:alert] = "Something went wrong :/"
     render :new, status: :unprocessable_entity
@@ -30,7 +30,7 @@ end
 
 
 private
-  def product_params
+  def inv_keg_params
     params.require(:inventory_keg).permit(:style, :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size)
   end
 
