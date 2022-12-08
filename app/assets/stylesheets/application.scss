@@ -1,8 +1,8 @@
-@import "bootstrap-sprockets";
+// @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
-  background-color: rgb(184, 184, 183);
+  background-color: rgb(255, 255, 255);
   font-family: Garamond;
 }
 
@@ -10,30 +10,30 @@ ul li {
   font-family: Garamond;
   list-style: none;
   font-size: 18px;
-  text-align: center;
+  // text-align: center;
 }
 
-h1 {
-  font-size: 60px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-}
+// h1 {
+//   font-size: 60px;
+//   text-align: center;
+//   color: rgb(0, 0, 0);
+// }
 
-h2 {
-  font-size: 50px;
-  text-align: center;
-  color: rgb(53, 0, 59);
-}
+// h2 {
+//   font-size: 50px;
+//   text-align: center;
+//   color: rgb(53, 0, 59);
+// }
 
-h3 {
-  font-size: 40px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-}
+// h3 {
+//   font-size: 40px;
+//   text-align: center;
+//   color: rgb(0, 0, 0);
+// }
 
-a {
-  color: rgb(0, 0, 0);
-}
+// a {
+//   color: rgb(0, 0, 0);
+// }
 
 #beerIcon {
   background-color: rgb(255, 255, 255);

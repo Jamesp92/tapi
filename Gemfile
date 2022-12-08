@@ -42,11 +42,11 @@ gem "tzinfo-data"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "bootstrap-sass",  "3.4.1"
+# gem "bootstrap-sass",  "3.4.1"
 # Use Sass to process CSS
-gem "sassc-rails", ">= 2.1.0"
+gem "sassc-rails"
 
-# gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap', '~> 5.1.3'
 
 # gem "cssbundling-rails", "~> 1.1"
 
