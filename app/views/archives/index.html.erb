@@ -1,11 +1,10 @@
-<%# archive show all taps 
-user = view
-admin view and update %>
+<h1>Archive</h1>
 
 <% if @archives.any? %>
   <ul>
     <% @archives.each do |archive| %>
-      <li><%= link_to archive.brand, archives_path(archive) %></li>
+    <% link_text = "#{archive.brand}  #{archive.brewery}" %>
+      <li><%= link_to link_text, archives_path(archive) %></li>
     <% end %>
   </ul>
 <% else %>
