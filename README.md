@@ -11,6 +11,9 @@
 * Ruby
 * Rails
 * Active Record
+* Javascript
+* Bootstrap
+* sortable.js
 
 ## Setup/Installation Requirements
 
