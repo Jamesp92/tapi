@@ -4,7 +4,7 @@
 #### Evgeny Zbirun <zbirunzbirun@gmail.com>
 #### PJ Perry <pjperry28@gmail.com>
 
-#### A Ruby on Rails web app that tracks keg inventory and manages draft lists for bars serving multiple beer varieties. By utilizing an intelligent sorting system and user-friendly interface, the software eliminates wasted time spent manually deciding keg order, improves beer quality by prioritizing freshness, and increases customer engagement by maintaining draft list variety.
+#### A Ruby on Rails web app that tracks keg inventory and manages draft lists for bars serving multiple beer varieties. By utilizing an intelligent sorting system and user-friendly interface, the software reclaims valuable time spent manually deciding keg order, improves beer quality by prioritizing freshness, and increases customer engagement by maintaining draft list variety.
 
 ## Technologies Used
 
