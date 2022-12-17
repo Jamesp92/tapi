@@ -4,7 +4,7 @@
 #### Evgeny Zbirun <zbirunzbirun@gmail.com>
 #### PJ Perry <pjperry28@gmail.com>
 
-#### This app organizes keg inventory and auto curates taps for bars. 
+#### A Ruby on Rails web app that tracks keg inventory and manages draft lists for bars serving multiple beer varieties. By utilizing an intelligent sorting system and user-friendly interface, the software eliminates wasted time spent manually deciding keg order, improves beer quality by prioritizing freshness, and increases customer engagement by maintaining draft list variety.
 
 ## Technologies Used
 
@@ -25,7 +25,9 @@
 * Navigate in your browser to http://localhost:3000/
 
 *Admin: For security, any users that require admin privlidges will have to be given them via the rails console.
-*Default Users: By default, Admin and User are seeded in the database. Use Admin@admin.com PW: 1234...
+*Default Users: By default, Admin and User are seeded in the database.
+  *Admin Username: admin Password: admin
+  *User Username: user  Password: user 
 
 ## Known Bugs
 
