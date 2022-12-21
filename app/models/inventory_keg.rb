@@ -1,6 +1,6 @@
 class InventoryKeg < ApplicationRecord
   belongs_to :tap, optional: true
-  validates :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size, presence: true
+  # validates :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size, presence: true
   scope :most_recent, -> { order(created_at: :desc).limit(5)}
 
   def self.find_next_keg(tap)

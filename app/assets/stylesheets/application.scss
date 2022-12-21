@@ -1,8 +1,13 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 body {
-  background-color: rgb(255, 255, 255);
+  background: url("Tapilogo.png") fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(184, 184, 183);
   font-family: Garamond;
 }
 

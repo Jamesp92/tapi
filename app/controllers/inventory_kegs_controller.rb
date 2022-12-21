@@ -20,7 +20,7 @@ def create
   @inv_keg = InventoryKeg.create!(keg_params)
   if @inv_keg.save
     flash[:notice] = "Wine has been added to the List."
-    render :index
+    redirect_to inventory_kegs_path
   else
     flash[:alert] = "Something went wrong :/"
     render :new, status: :unprocessable_entity
@@ -46,7 +46,7 @@ end
 
 private
   def keg_params
-    params.require(:inventory_keg).permit(:style, :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size)
+    params.require(:inventory_keg).permit( :brand, :brewery, :date_received, :priority, :abv, :price, :serving_size, :serving_price, :keg_size)
   end
 
 end

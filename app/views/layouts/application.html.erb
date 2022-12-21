@@ -11,9 +11,9 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"> <%= image_tag "Tapi.jpg", height:45 %></a>
+        <a class="navbar-brand" href="/login"> <%= image_tag "Tapilogo.png", height:45 %></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           
@@ -41,6 +41,13 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives">Archive</a>
             </li>
+            <li id="user_name" class="navbar-text">
+               <% if current_user && current_user.admin  %>
+              | hello! <%= current_user.user_name  %> you are logged in as: admin  
+                      <% elsif current_user %>
+              | hello! <%= current_user.user_name %> 
+              <% end %>
+            </li>
             <li class="nav-item">
               <a class="nav-link" >
                 <% if logged_in? %>
@@ -54,6 +61,7 @@
         </div>
       </div>
     </nav>
+    
     
     <div class=container>  
       <%= yield %>
