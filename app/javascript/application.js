@@ -16,5 +16,3 @@ document.addEventListener('turbo:load', () => {
   };
 });
 
-console.log('hello');
-

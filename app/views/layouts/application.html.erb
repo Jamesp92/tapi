@@ -11,57 +11,51 @@
   </head>
 
   <body>
-  
-    <div class=container>
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/"> <%= image_tag "Tapilogo.png", height:50 %></a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            |
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/login">Home</a>|
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="/">Keg inventory</a>|
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Taps 
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/taps/1">Tap 1</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/taps/2">Tap 2</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/taps/3">Tap 3</a></li>
-                   <li><hr class="dropdown-divider"></li>
-                   <li><a class="dropdown-item" href="/taps/4">Tap 4</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/taps/5">Tap 5</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/taps/6">Tap 6</a></li>
-                </ul>
-                |
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="/archives">Archive</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"> <%= image_tag "Tapi.jpg", height:45 %></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/login">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/">Keg inventory</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Taps 
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% taps = Tap.all.order(:tap_number) %>
+                <% if taps.any? %>
+                  <% taps.each do |tap| %>
+                  <li><a class="dropdown-item" href="/taps/<%=tap.id %>">Tap <%= tap.tap_number %></a></li>
+                    <li><hr class="dropdown-divider"></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/archives">Archive</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >
+                <% if logged_in? %>
+                  <%= button_to "Logout", sessions_path, method: :delete %>
+                <% else %>
+                  <%= button_to "Login Page", login_path, method: :get %>
+                <% end %> 
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-
-
-      <% if logged_in? %>
-        <%= button_to "Logout", sessions_path, method: :delete %>
-      <% else %>
-        <%= button_to "Login Page", login_path, method: :get %>
-      <% end %>
-      <br>
+      </div>
+    </nav>
+    
+    <div class=container>  
       <%= yield %>
     </div>
   </body>
