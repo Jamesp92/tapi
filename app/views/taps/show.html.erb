@@ -1,5 +1,6 @@
 <h1>Tap: <%= @tap.tap_number %></h1>
-<h3>Style: <%= @tap.tap_style %></h3>
+<h3>Tap Style: <%= @tap.tap_style %></h3>
+<hr />
 
 <% if !@tap.keg_on_id.nil? %>
 <% keg_on = InventoryKeg.find(@tap.keg_on_id) %>
@@ -32,8 +33,7 @@
 <% else %>
   <p>There are no kegs in line yet.</p>
 <% end %>
-
-<br>
+<hr />
 
 <h3>Suggested Kegs:<h3>
 <% if @tap_suggest.any? %>
