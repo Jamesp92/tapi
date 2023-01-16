@@ -29,11 +29,12 @@
                 Taps 
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/taps">All Taps</a></li>
                 <% taps = Tap.all.order(:tap_number) %>
                 <% if taps.any? %>
                   <% taps.each do |tap| %>
                   <li><a class="dropdown-item" href="/taps/<%=tap.id %>">Tap <%= tap.tap_number %></a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <%# <li><hr class="dropdown-divider"></li> %>
                   <% end %>
                 <% end %>
               </ul>
