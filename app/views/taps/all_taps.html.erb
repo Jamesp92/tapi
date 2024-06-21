@@ -1,0 +1,14 @@
+<h1>Taps: </h1>
+
+<% if @taps.any? %>
+  <ul>
+    <% @taps.each do |tap| %>
+      <li>Tap: <%= link_to tap.tap_number, tap_path(tap) %> Tap Style: <%= tap.tap_style%> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no taps yet.</p>
+<% end %>
+
+
+

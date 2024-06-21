@@ -11,6 +11,61 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/login"> <%= image_tag "Tapilogo.png", height:45 %></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/login">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/">Keg inventory</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Taps 
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/taps">All Taps</a></li>
+                <% taps = Tap.all.order(:tap_number) %>
+                <% if taps.any? %>
+                  <% taps.each do |tap| %>
+                  <li><a class="dropdown-item" href="/taps/<%=tap.id %>">Tap <%= tap.tap_number %></a></li>
+                    <%# <li><hr class="dropdown-divider"></li> %>
+                  <% end %>
+                <% end %>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/archives">Archive</a>
+            </li>
+            <li id="user_name" class="navbar-text">
+                <% if current_user && current_user.admin  %>
+                  Username: <%= current_user.user_name  %> | Logged in as: Admin  
+                <% elsif current_user %>
+                  Username: <%= current_user.user_name %> | Logged in as: User
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >
+                <% if logged_in? %>
+                  <%= button_to "Logout", sessions_path, method: :delete %>
+                <% else %>
+                  <%= button_to "Login Page", login_path, method: :get %>
+                <% end %> 
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
+    <div class=container>  
+      <%= yield %>
+    </div>
   </body>
 </html>

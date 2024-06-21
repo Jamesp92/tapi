@@ -4,13 +4,16 @@
 #### Evgeny Zbirun <zbirunzbirun@gmail.com>
 #### PJ Perry <pjperry28@gmail.com>
 
-#### A project to demonstrate building and accessing databasses through a browser using ActiveRecord and Ruby on Rails. The theme of the project is a site of products and reviews, which I chose to model off of a wine store run by my dog, Mason.  Using bCrypt authentication, authorized users are able to create, update, and delete Wines, as well as write reviews and leave ratings for the wine which are organized by linked tables in Postgres. In order to test the functionality of the project, I seeded the database using faker. All CRUD functionality is tested using rspec and capybara. 
+#### A Ruby on Rails web app that tracks keg inventory and manages draft lists for bars serving multiple beer varieties. By utilizing an intelligent sorting system and user-friendly interface, the software reclaims valuable time spent manually deciding keg order, improves beer quality by prioritizing freshness, and increases customer engagement by maintaining draft list variety.
 
 ## Technologies Used
 
 * Ruby
 * Rails
 * Active Record
+* Javascript
+* Bootstrap
+* sortable.js
 
 ## Setup/Installation Requirements
 
@@ -22,7 +25,9 @@
 * Navigate in your browser to http://localhost:3000/
 
 *Admin: For security, any users that require admin privlidges will have to be given them via the rails console.
-*Default Users: By default, Admin and User are seeded in the database. Use Admin@admin.com PW: 1234...
+*Default Users: By default, Admin and User are seeded in the database.
+  *Admin Username: admin Password: admin
+  *User Username: user  Password: user 
 
 ## Known Bugs
 

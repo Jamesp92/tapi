@@ -1,0 +1,22 @@
+<h1 class='.style-body'>Inventory Kegs</h1>
+
+
+<% if @inv_kegs.any? %>
+  <ul class="kegs">
+    <% @inv_kegs.each do |keg| %>
+      <li> <img id="beerIcon" src="<%= asset_path('beer4.jpg') %>">   <%= link_to keg.brand, inventory_keg_path(keg) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no kegs to view.</p>
+<% end %>
+
+<%if is_admin?%>
+<%= button_to "Add Keg to List", 
+              new_inventory_keg_path,
+              method: :get %>
+<%end%>
+
+
+
+

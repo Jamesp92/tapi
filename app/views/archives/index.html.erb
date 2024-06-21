@@ -1,0 +1,12 @@
+<h1>Archive</h1>
+
+<% if @archives.any? %>
+  <ul>
+    <% @archives.each do |archive| %>
+    <% link_text = "#{archive.brand}  #{archive.brewery}" %>
+      <li><%= link_to link_text, archives_path(archive) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Empty.</p>
+<% end %>

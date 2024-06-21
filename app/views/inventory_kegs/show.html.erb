@@ -1,0 +1,45 @@
+<h2>Brand: <%= @inv_keg.brand %></h2>
+<h3>Brewery: <%= @inv_keg.brewery %></h3>
+<h3>Abv: <%= @inv_keg.abv %></h3>
+
+<h3>Date received: <%= @inv_keg.date_received  %></h3>
+
+<h3>Keg price: <%= @inv_keg.price %></h3>
+<h3>Keg size: <%= @inv_keg.keg_size %></h3>
+
+<h3>Serving size: <%= @inv_keg.serving_size %></h3>
+<h3>Serving price: <%= @inv_keg.serving_price %></h3>
+<h3>Date tapped: <%= @inv_keg.date_tapped %></h3>
+
+<h3>Priority: <%= @inv_keg.priority %></h3>
+
+<% if !@inv_keg.taps_id.nil? %>
+<% tap = Tap.find(@inv_keg.taps_id)%>
+  <h3>Tap: <%= tap.tap_number %></h3>
+<% else %>
+  <h3>Tap: Not Assigned to a Tap</h3>
+<% end %>
+
+<%= button_to "Edit Keg Info", 
+              edit_inventory_keg_path,
+              method: :get %>
+<br>
+<form action="/inventory_kegs/<%= @inv_keg.id %>" method="patch">
+  <%# <input name="_method" type="hidden" value="patch"> %>
+  
+  <div class="form-group">
+    <label for="tap_assign">Assign to a Tap:</label>
+      <select name="tap" id="tap_assign">
+        <option value="">--Select a Tap--</option>
+        <% Tap.all.each do |tap| %>
+          <option value="<%= tap.id %>"><%= tap.tap_number %> <%= tap.tap_style %></option>
+        <% end %>
+      </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<%# <%= form_for @inv_keg do |f| %>
+  <%#= f.label :taps_id%>
+  <%#= f.submit %>
+<%# end %> 
